@@ -248,17 +248,17 @@ class Chef
           puts("done")
         }
 
-        Chef::Config[:knife][:hints]['linode'] ||= Hash.new
-        Chef::Config[:knife][:hints]['linode'].merge!({
-            'server_id' => server.id.to_s,
-            'datacenter_id' => locate_config_value(:linode_datacenter),
-            'flavor_id' => locate_config_value(:linode_flavor),
-            'image_id' => locate_config_value(:linode_image),
-            'kernel_id' => locate_config_value(:linode_kernel),
-            'ip_addresses' => server.ips.map(&:ip)})
+        #Chef::Config[:knife][:hints]['linode'] ||= Hash.new
+        #Chef::Config[:knife][:hints]['linode'].merge!({
+        #    'server_id' => server.id.to_s,
+        #    'datacenter_id' => locate_config_value(:linode_datacenter),
+        #    'flavor_id' => locate_config_value(:linode_flavor),
+        #    'image_id' => locate_config_value(:linode_image),
+        #    'kernel_id' => locate_config_value(:linode_kernel),
+        #    'ip_addresses' => server.ips.map(&:ip)})
 
-        msg_pair("JSON Attributes", config[:json_attributes]) unless !config[:json_attributes] || config[:json_attributes].empty?
-        bootstrap_for_node(server,fqdn).run
+        #msg_pair("JSON Attributes", config[:json_attributes]) unless !config[:json_attributes] || config[:json_attributes].empty?
+        #bootstrap_for_node(server,fqdn).run
       end
 
       def bootstrap_for_node(server,fqdn)
